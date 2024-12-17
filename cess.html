@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .container h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #ff6f61;
+        }
+        .container p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .container button {
+            background-color: #ff6f61;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .container button:hover {
+            background-color: #e55c50;
+        }
+        #videoPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            z-index: 1000;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        #videoPopup video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #closeBtn:hover {
+            background-color: #e55c50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Anniversary!</h1>
+        <p>My love, even though we're miles apart, my heart feels closer to you every day. </p>
+        <p>I'm so grateful for you and all the love we share.</p>
+        <p>I pray that our bond grows stronger with each passing year!</p>
+        <P>I love you so much Mami</P>
+        <button onclick="showVideoPopup()">Click for a Surprise!</button>
+    </div>
+
+    <div id="videoPopup">
+        <button id="closeBtn" onclick="closeVideoPopup()">X</button>
+        <video id="anniversaryVideo" controls autoplay>
+            <source src="cess.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function showVideoPopup() {
+            const popup = document.getElementById('videoPopup');
+            const video = document.getElementById('anniversaryVideo');
+            popup.style.display = 'block';
+            video.play();
+        }
+
+        function closeVideoPopup() {
+            const popup = document.getElementById('videoPopup');
+            const video = document.getElementById('anniversaryVideo');
+            popup.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
